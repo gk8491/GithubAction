@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
@@ -23,6 +23,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./dockerfile
           push: true
-          tags: <your-registry-url>/<image-name>:latest
+          tags: ghcr.io/<image-name>:latest
