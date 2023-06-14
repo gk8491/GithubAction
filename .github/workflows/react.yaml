@@ -53,7 +53,9 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          ssh ubuntu@${{ secrets.PUBLIC_IP }} -i ~/.ssh/github_actions "docker login https://ghcr.io -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}"
+          ssh ubuntu@${{ secrets.PUBLIC_IP }} -i ~/.ssh/github_actions "docker login https://ghcr.io -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker pull ghcr.io/gk8491/react:latest
+          docker run --name my-container -p 3000:3000 ghcr.io/gk8491/react:latest"
 
           
 
