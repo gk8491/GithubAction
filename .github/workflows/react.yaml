@@ -23,6 +23,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: ./GithubAction
+          context: ./calculator-app-in-react
           push: true
           tags: ghcr.io/gk8491/react:latest
