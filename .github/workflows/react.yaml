@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Login to Docker registry
+      - name: Login to Github registry
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
@@ -25,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: <your-registry-url>/<image-name>:latest
+          tags: ghcr.io/gk8491/react:latest
