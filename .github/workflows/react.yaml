@@ -28,7 +28,7 @@ jobs:
           tags: ghcr.io/gk8491/react:latest
 
 
-jobs:
+
   deploy:
     runs-on: ubuntu-latest
 
